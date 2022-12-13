@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "product_service/service";
+
+service ProductService {
+    rpc CreateProduct (Product) returns (Product) {}
+    rpc GetProduct (ProductSKU) returns (Product) {}
+    rpc UpdateProduct (Product) returns (Product) {}
+    rpc DeleteProduct (ProductSKU) returns (DeleteResponse) {}
+    rpc ListProducts (ProductListRequest) returns (ProductList) {}
+}
+
+message Product {
+    string id = 1;
+    string sku = 2;
+    string name = 3;
+    string brand = 4;
+    string size = 5;
+    float price = 6;
+    string principalImage = 7;
+    repeated string images = 8;
+}
+
+message ProductSKU {
+    string sku = 1;
+}
+
+message ProductListRequest {
+
+}
+
+message ProductList {
+    repeated Product products = 1;
+}
+
+message DeleteResponse {
+    int64 count = 1;
+}
