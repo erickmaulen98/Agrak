@@ -30,7 +30,7 @@ The steps are:
 * To lift the product service by:  *go run .\api\main.go*  with port :8080
 * To lift the product service composite by *go run .\api\main.go* with port :8081
 * In postman create a new request
-* To create a user for example is the next request
+* To create a product for example is the next request
 
 `
 METHOD: POST
