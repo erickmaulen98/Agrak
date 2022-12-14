@@ -51,3 +51,8 @@ BODY: {
     "size": "35",
     "sku": "FAL-840627987"}
 `
+
+## Why gRPC was chosen ?
+gRPC was chosen because it is faster to connect to another service that requires its procedures.
+In addition, ideally, if there is an exposed service, it should not be linked to a database and thus only invoke calls without knowing the logic that applies.
+That is why a composite was used to communicate with the client, and thus keep the logic of the service separate.
