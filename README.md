@@ -30,7 +30,7 @@ The steps are:
 * To lift the product service by:  *go run .\api\main.go*  with port :8080
 * To lift the product service composite by *go run .\api\main.go* with port :8081
 * In postman create a new request
-* To create a user for example is the next request
+* To create a product for example is the next request
 
 `
 METHOD: POST
@@ -51,3 +51,8 @@ BODY: {
     "size": "35",
     "sku": "FAL-840627987"}
 `
+
+## Why gRPC was chosen ?
+gRPC was chosen because it is faster to connect to another service that requires its procedures.
+In addition, ideally, if there is an exposed service, it should not be linked to a database and thus only invoke calls without knowing the logic that applies.
+That is why a composite was used to communicate with the client, and thus keep the logic of the service separate.
